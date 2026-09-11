@@ -6,23 +6,26 @@
 
 cleaning_wipe_holder();
 
-module cleaning_wipe_holder( ) {
+// Exported dimensions
+function tape_width() = 12.7;
+
+
+module cleaning_wipe_holder(base=2) {
     $fn = 64;
-    base = 2;
-    post = 22;
-    tape = 12.7;
+    post_h = 22;
     gap = 4.5;
-    postdepth = 8;
+    grip_depth = 8;
+    tape_width = tape_width();
 
     // Main post
     difference(){
-        cylinder(post + base, d=tape);
-        translate([tape / -2, 2, -1])
-            cube([tape + 5, tape, post + 5]);
+        cylinder(post_h + base, d=tape_width);
+        translate([tape_width / -2, 2, -1])
+            cube([tape_width + 5, tape_width, post_h + 5]);
     }
     // grip posts
     translate([2.25, 2 + 9, 0])
-        cube([(tape - gap) / 2, postdepth, post]);
-    translate([1.85 -tape + gap, 2 + 9, 0])
-        cube([(tape - gap) / 2, postdepth, post]);
+        cube([(tape_width - gap) / 2, grip_depth, post_h]);
+    translate([1.85 - tape_width + gap, 2 + 9, 0])
+        cube([(tape_width - gap) / 2, grip_depth, post_h]);
 }
