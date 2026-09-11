@@ -38,7 +38,6 @@ translate([-31.3, -28.5, 0]) {
 }
 
 // Base
-
 bar_l = 40;
 color("blue", 0.7) {
     // Thick post base
@@ -46,7 +45,6 @@ color("blue", 0.7) {
         translate([-tape_width / 2, -bar_l, 0])
             cube([tape_width, bar_l, base_h]);
     // Thin post base
-
         translate([-10, -39, 0])
         rotate([0, 0, 90 - 18])
             cube([tape_width, bar_l, base_h]);
