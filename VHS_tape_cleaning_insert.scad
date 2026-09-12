@@ -1,7 +1,7 @@
 // VHS tape cleaning cassette insert
 // Repo: https://github.com/hornc/VHS-cleaning
 // Author: hornc, 2026
-// Version: v0.2
+// Version: v0.3
 // License: CC BY-SA 4.0
 $fn = 64;
 
@@ -36,7 +36,8 @@ translate([-31.3, -28.5, 0]) {
     }
     
     // thick post
-    translate([20, -6, 0]){
+    color("yellow", 0.4)
+    translate([20, -8, 0]){
         cylinder(7, d=11.5);
         translate([0, 0, 7])
             sphere(d=11.5);
@@ -59,5 +60,5 @@ minkowski() {
             rotate([0, 0, 90 - 18])
                 cube([tape_width - 2 * curve, bar_l, base_h]);
     }
-    cylinder(r=curve, h=0.1, center=true);
+    cylinder(r=curve, h=0.001, center=true);
 }
