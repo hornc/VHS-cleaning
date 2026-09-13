@@ -62,3 +62,18 @@ minkowski() {
     }
     cylinder(r=curve, h=0.001, center=true);
 }
+
+// Non-Printing: Tape and guide rollers (on VHS cassette)
+// for alignment and visual reference.
+%translate([-31.3, 15 - 28.5 - 3, base_h + 4]){
+    // origin at top left cnr. of green alignment base.
+    // Tape guide rollers
+    translate([-70, 0, 0])
+        cylinder(17, d=6);
+    translate([50 + 27, 0, 0])
+        cylinder(17, d=6);
+    // Tape segment
+    translate([tape_width / 2, 15, 0])
+        rotate([90, 0, -10])
+            square([75, tape_width], center = false);
+}
