@@ -20,7 +20,7 @@ difference() {
 
 // Extend handle
 translate([0, 2*-handle, 0])
-    cube([thickness, 40, h/5]);
+    cube([thickness, 40, 4]);
 
 // Rounded tip
 translate([thickness/2, 20, 0])
