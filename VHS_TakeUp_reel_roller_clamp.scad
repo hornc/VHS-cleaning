@@ -1,7 +1,7 @@
 // VHS-cleaning: Take-Up reel roller clamp
 // Repo: https://github.com/hornc/VHS-cleaning
 // Author: hornc, 2026
-// Version: v0.1
+// Version: v0.2
 // License: CC BY-SA 4.0
 
 $fn = 64;
@@ -26,12 +26,11 @@ module sloped_box(w, l, h1, h2) {
 difference(){
     group(){
         cube([30 + e, base_h, 5]);
-        difference(){
-            rotate([-90, 0, 0])
-                cylinder(base_h, d=10);  // curved end
-            translate([0, 0, -7.5])
-                cube(15, center=true);
-        }
+        translate([-1, 0, 2.5])
+        rotate([-90, 0, 0])
+            cylinder(base_h, d=5);  // curved end
+        translate([-1, 0, 0])
+            cube([5, base_h, 5]);
     }
     // Hole
     translate([0, 0, 5/2])
@@ -40,12 +39,12 @@ difference(){
                 cylinder(10, d=hole_d, center = true);
 }
 
+under_len = 5;
+edge_h = 20 + 1;  // +1 clearance
+
 color("green")
 translate([30, 0, 0])
-    //cube([base_h, 20 + base_h, 10]);
-    sloped_box(base_h, 20 + base_h + e, 5, 10);
+    sloped_box(base_h, edge_h + base_h + e, 5, 10);
 
-under_len = 5;
-
-translate([30 - under_len, 20 + base_h, 0])
+translate([30 - under_len, edge_h + base_h, 0])
     cube([under_len + base_h, base_h, 10]);
