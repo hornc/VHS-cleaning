@@ -1,7 +1,10 @@
-// Gripper for flat folded PEC pad
-// to wipe top and bottom edges
-// of tape.
-
+// VHS-cleaning: Gripper for flat folded PEC pad
+//                to wipe top and bottom edges
+//                of tape.
+// Repo: https://github.com/hornc/VHS-cleaning
+// Author: hornc, 2026
+// Version: v0.1
+// License: CC BY-SA 4.0
 
 $fn = 64;
 handle = 35;
